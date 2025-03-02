@@ -1,0 +1,8 @@
+{
+  "biome.psv.void": "虚空",
+  "item.psv.teleport_core": "传送核心",
+  "message.psv.teleport_core.blocked": "你似乎被什么东西挡住了！",
+  "message.psv.teleport_core.out_of_bounds": "目标位置超出了世界边界！",
+  "tooltip.psv.teleport_core.original": "原始位置",
+  "tooltip.psv.teleport_core.void": "目标位置"
+}

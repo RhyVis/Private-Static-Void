@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "tag": "forge:ender_pearls"
+    },
+    "I": {
+      "tag": "minecraft:anvil"
+    }
+  },
+  "pattern": [
+    "DDD",
+    "DID",
+    "DDD"
+  ],
+  "result": {
+    "item": "psv:teleport_core"
+  },
+  "show_notification": true
+}

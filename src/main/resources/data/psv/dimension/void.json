@@ -1,0 +1,11 @@
+{
+  "type": "psv:void",
+  "generator": {
+    "type": "psv:grid_generator",
+    "setting": {
+      "biome": "psv:void",
+      "border_block": "minecraft:glass",
+      "inner_block": "minecraft:stone"
+    }
+  }
+}

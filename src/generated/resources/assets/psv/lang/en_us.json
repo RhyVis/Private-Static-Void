@@ -1,5 +1,6 @@
 {
   "biome.psv.void": "Void",
+  "block.psv.energy_source": "Energy Source Block",
   "item.psv.teleport_core": "Teleport Core",
   "message.psv.teleport_core.blocked": "You seem to be blocked by something!",
   "message.psv.teleport_core.out_of_bounds": "The destination is out of the world bounds!",

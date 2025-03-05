@@ -23,12 +23,12 @@ import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.Blocks
 import rhx.psv.LOGGER
 import rhx.psv.init.ResourceKeys
-import rhx.psv.util.comma
-import rhx.psv.util.component1
-import rhx.psv.util.component2
-import rhx.psv.util.component3
-import rhx.psv.util.space
-import rhx.psv.util.withBrackets
+import rhx.psv.util.ext.comma
+import rhx.psv.util.ext.component1
+import rhx.psv.util.ext.component2
+import rhx.psv.util.ext.component3
+import rhx.psv.util.ext.space
+import rhx.psv.util.ext.withBrackets
 
 class TeleportCore :
     Item(

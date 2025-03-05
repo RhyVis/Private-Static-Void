@@ -1,4 +1,4 @@
-package rhx.psv.util
+package rhx.psv.util.ext
 
 import net.minecraft.core.BlockPos
 

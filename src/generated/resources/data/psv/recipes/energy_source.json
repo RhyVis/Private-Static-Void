@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "forge:storage_blocks/iron"
+    },
+    "D": {
+      "tag": "forge:dusts/glowstone"
+    },
+    "I": {
+      "tag": "minecraft:anvil"
+    }
+  },
+  "pattern": [
+    "AAA",
+    "DID",
+    "AAA"
+  ],
+  "result": {
+    "item": "psv:energy_source"
+  },
+  "show_notification": true
+}

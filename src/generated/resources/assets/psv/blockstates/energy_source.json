@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "psv:block/energy_source"
+    }
+  }
+}

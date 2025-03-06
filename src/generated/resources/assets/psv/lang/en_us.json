@@ -2,9 +2,12 @@
   "biome.psv.void": "Void",
   "block.psv.energy_source": "Energy Source",
   "block.psv.fuel_source": "Fuel Source",
+  "item.psv.eternal_battery": "Eternal Battery",
   "item.psv.teleport_core": "Teleport Core",
   "message.psv.teleport_core.blocked": "You seem to be blocked by something!",
   "message.psv.teleport_core.out_of_bounds": "The destination is out of the world bounds!",
+  "tab.psv": "Private Static Void",
+  "tooltip.psv.common.max_transfer": "Max Transfer: ",
   "tooltip.psv.teleport_core.original": "Original Position",
   "tooltip.psv.teleport_core.void": "Target Position"
 }

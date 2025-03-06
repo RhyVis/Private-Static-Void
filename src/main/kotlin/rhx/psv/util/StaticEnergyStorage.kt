@@ -10,12 +10,12 @@ open class StaticEnergyStorage(
     override fun receiveEnergy(
         maxReceive: Int,
         simulate: Boolean,
-    ): Int = min(maxReceive, energyTransfer)
+    ): Int = 0
 
     override fun extractEnergy(
         maxExtract: Int,
         simulate: Boolean,
-    ): Int = 0
+    ): Int = min(maxExtract, energyTransfer)
 
     override fun getEnergyStored(): Int = energyStorage
 

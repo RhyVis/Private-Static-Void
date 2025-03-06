@@ -63,14 +63,24 @@ object DataGeneration {
                 .unlockedBy("unlock", has(Tags.Items.ENDER_PEARLS))
                 .save(pWriter)
             ShapedRecipeBuilder
+                .shaped(RecipeCategory.MISC, Registry.ETERNAL_BATTERY)
+                .pattern("CGC")
+                .pattern("CIC")
+                .pattern("CGC")
+                .define('C', Tags.Items.STORAGE_BLOCKS_IRON)
+                .define('G', Tags.Items.STORAGE_BLOCKS_GOLD)
+                .define('I', ItemTags.ANVIL)
+                .unlockedBy("unlock", has(Tags.Items.STORAGE_BLOCKS_GOLD))
+                .save(pWriter)
+            ShapedRecipeBuilder
                 .shaped(RecipeCategory.MISC, Registry.ENERGY_SOURCE_BLOCK_ITEM)
                 .pattern("AAA")
                 .pattern("DID")
                 .pattern("AAA")
                 .define('A', Tags.Items.STORAGE_BLOCKS_IRON)
                 .define('D', Tags.Items.DUSTS_GLOWSTONE)
-                .define('I', ItemTags.ANVIL)
-                .unlockedBy("unlock", has(Tags.Items.DUSTS_GLOWSTONE))
+                .define('I', Registry.ETERNAL_BATTERY)
+                .unlockedBy("unlock", has(Registry.ETERNAL_BATTERY))
                 .save(pWriter)
             ShapedRecipeBuilder
                 .shaped(RecipeCategory.MISC, Registry.FUEL_SOURCE_BLOCK_ITEM)
@@ -95,6 +105,7 @@ object DataGeneration {
         ) {
         override fun registerModels() {
             basicItem(Registry.TELEPORT_CORE)
+            basicItem(Registry.ETERNAL_BATTERY)
             withExistingParent("energy_source", modLoc("block/energy_source"))
             withExistingParent("fuel_source", modLoc("block/fuel_source"))
         }
@@ -162,13 +173,21 @@ object DataGeneration {
     ) : LanguageProvider(output, MOD_ID, "en_us") {
         override fun addTranslations() {
             addItem("Teleport Core") { Registry.TELEPORT_CORE }
+            addItem("Eternal Battery") { Registry.ETERNAL_BATTERY }
             addBlock("Energy Source") { Registry.ENERGY_SOURCE_BLOCK }
             addBlock("Fuel Source") { Registry.FUEL_SOURCE_BLOCK }
+
             add("biome.psv.void", "Void")
+
+            add("tab.psv", "Private Static Void")
+
             add("tooltip.psv.teleport_core.original", "Original Position")
             add("tooltip.psv.teleport_core.void", "Target Position")
+
             add("message.psv.teleport_core.blocked", "You seem to be blocked by something!")
             add("message.psv.teleport_core.out_of_bounds", "The destination is out of the world bounds!")
+
+            add("tooltip.psv.common.max_transfer", "Max Transfer: ")
         }
     }
 
@@ -177,13 +196,21 @@ object DataGeneration {
     ) : LanguageProvider(output, MOD_ID, "zh_cn") {
         override fun addTranslations() {
             addItem("传送核心") { Registry.TELEPORT_CORE }
+            addItem("永恒电池") { Registry.ETERNAL_BATTERY }
             addBlock("能量源") { Registry.ENERGY_SOURCE_BLOCK }
             addBlock("燃料源") { Registry.FUEL_SOURCE_BLOCK }
+
             add("biome.psv.void", "虚空")
+
+            add("tab.psv", "Private Static Void")
+
             add("tooltip.psv.teleport_core.original", "原始位置")
             add("tooltip.psv.teleport_core.void", "目标位置")
+
             add("message.psv.teleport_core.blocked", "你似乎被什么东西挡住了！")
             add("message.psv.teleport_core.out_of_bounds", "目标位置超出了世界边界！")
+
+            add("tooltip.psv.common.max_transfer", "最大传输: ")
         }
     }
 

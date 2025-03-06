@@ -13,6 +13,7 @@ import rhx.psv.block.EnergySourceBlock
 import rhx.psv.block.FuelSourceBlock
 import rhx.psv.block.entity.EnergySourceBlockEntity
 import rhx.psv.block.entity.FuelSourceBlockEntity
+import rhx.psv.item.EternalBattery
 import rhx.psv.item.TeleportCore
 import rhx.psv.world.GridGenerator
 import thedarkcolour.kotlinforforge.forge.registerObject
@@ -26,6 +27,9 @@ object Registry {
 
     val TELEPORT_CORE: Item by
         ITEMS.registerObject("teleport_core") { TeleportCore() }
+
+    val ETERNAL_BATTERY: Item by
+        ITEMS.registerObject("eternal_battery") { EternalBattery() }
 
     val ENERGY_SOURCE_BLOCK: Block by
         BLOCKS.registerObject("energy_source") { EnergySourceBlock() }

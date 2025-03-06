@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psv:energy_source"
+        "recipe": "psv:eternal_battery"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -11,9 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "psv:eternal_battery"
-            ]
+            "tag": "forge:storage_blocks/gold"
           }
         ]
       },
@@ -28,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "psv:energy_source"
+      "psv:eternal_battery"
     ]
   },
   "sends_telemetry_event": false

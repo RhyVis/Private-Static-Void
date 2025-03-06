@@ -18,26 +18,19 @@ class EnergySourceBlockEntity(
     pos: BlockPos,
     state: BlockState,
 ) : BlockEntity(Registry.ENERGY_SOURCE_BLOCK_ENTITY, pos, state) {
-    private val energy =
-        object : StaticEnergyStorage(ENERGY_TRANSFER) {
-            override fun extractEnergy(
-                maxExtract: Int,
-                simulate: Boolean,
-            ): Int {
-                if (!simulate) {
-                    level?.sendBlockUpdated(
-                        worldPosition,
-                        level!!.getBlockState(worldPosition),
-                        level!!.getBlockState(worldPosition),
-                        2,
-                    )
-                }
-                return super.extractEnergy(maxExtract, simulate)
-            }
-        }
+    private val energyHandler = LazyOptional.of { StaticEnergyStorage(ENERGY_TRANSFER) }
 
-    override fun <T> getCapability(cap: Capability<T>): LazyOptional<T> =
-        if (!remove && cap == ForgeCapabilities.ENERGY) LazyOptional.of { energy }.cast() else super.getCapability(cap)
+    override fun <T : Any?> getCapability(
+        cap: Capability<T>,
+        side: Direction?,
+    ): LazyOptional<T> =
+        if (!remove &&
+            cap == ForgeCapabilities.ENERGY
+        ) {
+            energyHandler.cast()
+        } else {
+            super.getCapability(cap, side)
+        }
 
     override fun getUpdatePacket(): Packet<ClientGamePacketListener> = ClientboundBlockEntityDataPacket.create(this)
 

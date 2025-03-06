@@ -3,7 +3,7 @@ package rhx.psv.util
 import net.minecraftforge.energy.IEnergyStorage
 import kotlin.math.min
 
-open class StaticEnergyProvider(
+open class StaticEnergyStorage(
     private val energyTransfer: Int,
     private val energyStorage: Int = energyTransfer,
 ) : IEnergyStorage {

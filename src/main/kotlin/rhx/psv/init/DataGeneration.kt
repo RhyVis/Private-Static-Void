@@ -72,6 +72,16 @@ object DataGeneration {
                 .define('I', ItemTags.ANVIL)
                 .unlockedBy("unlock", has(Tags.Items.DUSTS_GLOWSTONE))
                 .save(pWriter)
+            ShapedRecipeBuilder
+                .shaped(RecipeCategory.MISC, Registry.FUEL_SOURCE_BLOCK_ITEM)
+                .pattern("CUC")
+                .pattern("CIC")
+                .pattern("CCC")
+                .define('C', Tags.Items.STORAGE_BLOCKS_COAL)
+                .define('I', ItemTags.ANVIL)
+                .define('U', Tags.Items.GLASS)
+                .unlockedBy("unlock", has(Tags.Items.STORAGE_BLOCKS_COAL))
+                .save(pWriter)
         }
     }
 
@@ -86,6 +96,7 @@ object DataGeneration {
         override fun registerModels() {
             basicItem(Registry.TELEPORT_CORE)
             withExistingParent("energy_source", modLoc("block/energy_source"))
+            withExistingParent("fuel_source", modLoc("block/fuel_source"))
         }
     }
 
@@ -105,7 +116,7 @@ object DataGeneration {
         helper: ExistingFileHelper?,
     ) : BlockTagsProvider(output, lookup, MOD_ID, helper) {
         override fun addTags(pProvider: HolderLookup.Provider) {
-            tag(BlockTags.MINEABLE_WITH_PICKAXE).add(Registry.ENERGY_SOURCE_BLOCK)
+            tag(BlockTags.MINEABLE_WITH_PICKAXE).add(Registry.ENERGY_SOURCE_BLOCK, Registry.FUEL_SOURCE_BLOCK)
         }
     }
 
@@ -119,6 +130,7 @@ object DataGeneration {
         ) {
         override fun registerStatesAndModels() {
             simpleBlock(Registry.ENERGY_SOURCE_BLOCK)
+            simpleBlock(Registry.FUEL_SOURCE_BLOCK)
         }
     }
 
@@ -134,6 +146,7 @@ object DataGeneration {
         class BlockLoot : VanillaBlockLoot() {
             override fun generate() {
                 dropSelf(Registry.ENERGY_SOURCE_BLOCK)
+                dropSelf(Registry.FUEL_SOURCE_BLOCK)
             }
 
             override fun getKnownBlocks(): MutableIterable<Block> =
@@ -149,7 +162,8 @@ object DataGeneration {
     ) : LanguageProvider(output, MOD_ID, "en_us") {
         override fun addTranslations() {
             addItem("Teleport Core") { Registry.TELEPORT_CORE }
-            addBlock("Energy Source Block") { Registry.ENERGY_SOURCE_BLOCK }
+            addBlock("Energy Source") { Registry.ENERGY_SOURCE_BLOCK }
+            addBlock("Fuel Source") { Registry.FUEL_SOURCE_BLOCK }
             add("biome.psv.void", "Void")
             add("tooltip.psv.teleport_core.original", "Original Position")
             add("tooltip.psv.teleport_core.void", "Target Position")
@@ -164,6 +178,7 @@ object DataGeneration {
         override fun addTranslations() {
             addItem("传送核心") { Registry.TELEPORT_CORE }
             addBlock("能量源") { Registry.ENERGY_SOURCE_BLOCK }
+            addBlock("燃料源") { Registry.FUEL_SOURCE_BLOCK }
             add("biome.psv.void", "虚空")
             add("tooltip.psv.teleport_core.original", "原始位置")
             add("tooltip.psv.teleport_core.void", "目标位置")

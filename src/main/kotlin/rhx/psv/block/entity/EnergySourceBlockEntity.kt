@@ -1,4 +1,4 @@
-package rhx.psv.block
+package rhx.psv.block.entity
 
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
@@ -12,14 +12,14 @@ import net.minecraftforge.common.capabilities.Capability
 import net.minecraftforge.common.capabilities.ForgeCapabilities
 import net.minecraftforge.common.util.LazyOptional
 import rhx.psv.registry.Registry
-import rhx.psv.util.StaticEnergyProvider
+import rhx.psv.util.StaticEnergyStorage
 
 class EnergySourceBlockEntity(
     pos: BlockPos,
     state: BlockState,
 ) : BlockEntity(Registry.ENERGY_SOURCE_BLOCK_ENTITY, pos, state) {
     private val energy =
-        object : StaticEnergyProvider(ENERGY_TRANSFER) {
+        object : StaticEnergyStorage(ENERGY_TRANSFER) {
             override fun extractEnergy(
                 maxExtract: Int,
                 simulate: Boolean,

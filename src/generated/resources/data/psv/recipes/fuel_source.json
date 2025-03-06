@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "tag": "forge:storage_blocks/coal"
+    },
+    "I": {
+      "tag": "minecraft:anvil"
+    },
+    "U": {
+      "tag": "forge:glass"
+    }
+  },
+  "pattern": [
+    "CUC",
+    "CIC",
+    "CCC"
+  ],
+  "result": {
+    "item": "psv:fuel_source"
+  },
+  "show_notification": true
+}

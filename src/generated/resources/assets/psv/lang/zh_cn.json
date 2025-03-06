@@ -1,6 +1,7 @@
 {
   "biome.psv.void": "虚空",
   "block.psv.energy_source": "能量源",
+  "block.psv.fuel_source": "燃料源",
   "item.psv.teleport_core": "传送核心",
   "message.psv.teleport_core.blocked": "你似乎被什么东西挡住了！",
   "message.psv.teleport_core.out_of_bounds": "目标位置超出了世界边界！",

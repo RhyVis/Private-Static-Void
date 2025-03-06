@@ -10,7 +10,9 @@ import net.minecraftforge.registries.DeferredRegister
 import net.minecraftforge.registries.ForgeRegistries
 import rhx.psv.MOD_ID
 import rhx.psv.block.EnergySourceBlock
-import rhx.psv.block.EnergySourceBlockEntity
+import rhx.psv.block.FuelSourceBlock
+import rhx.psv.block.entity.EnergySourceBlockEntity
+import rhx.psv.block.entity.FuelSourceBlockEntity
 import rhx.psv.item.TeleportCore
 import rhx.psv.world.GridGenerator
 import thedarkcolour.kotlinforforge.forge.registerObject
@@ -34,6 +36,17 @@ object Registry {
     val ENERGY_SOURCE_BLOCK_ENTITY: BlockEntityType<EnergySourceBlockEntity> by
         BLOCK_ENTITIES.registerObject("energy_source") {
             BlockEntityType.Builder.of(::EnergySourceBlockEntity, ENERGY_SOURCE_BLOCK).build(null)
+        }
+
+    val FUEL_SOURCE_BLOCK: Block by
+        BLOCKS.registerObject("fuel_source") { FuelSourceBlock() }
+
+    val FUEL_SOURCE_BLOCK_ITEM: BlockItem by
+        ITEMS.registerObject("fuel_source") { BlockItem(FUEL_SOURCE_BLOCK, Item.Properties()) }
+
+    val FUEL_SOURCE_BLOCK_ENTITY: BlockEntityType<FuelSourceBlockEntity> by
+        BLOCK_ENTITIES.registerObject("fuel_source") {
+            BlockEntityType.Builder.of(::FuelSourceBlockEntity, FUEL_SOURCE_BLOCK).build(null)
         }
 
     val GRID_GENERATOR by

@@ -9,9 +9,9 @@ import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.entity.BlockEntityTicker
 import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
-import rhx.psv.block.entity.EnergySourceBlockEntity
+import rhx.psv.block.entity.FuelSourceBlockEntity
 
-class EnergySourceBlock :
+class FuelSourceBlock :
     Block(
         Properties
             .of()
@@ -22,7 +22,7 @@ class EnergySourceBlock :
     override fun newBlockEntity(
         pPos: BlockPos,
         pState: BlockState,
-    ): BlockEntity = EnergySourceBlockEntity(pPos, pState)
+    ): BlockEntity = FuelSourceBlockEntity(pPos, pState)
 
     override fun <T : BlockEntity?> getTicker(
         pLevel: Level,
@@ -33,7 +33,7 @@ class EnergySourceBlock :
             null
         } else {
             BlockEntityTicker { _, _, _, blockEntity ->
-                if (blockEntity is EnergySourceBlockEntity) {
+                if (blockEntity is FuelSourceBlockEntity) {
                     blockEntity.onTickServer()
                 }
             }

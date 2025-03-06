@@ -1,5 +1,6 @@
 {
   "values": [
-    "psv:energy_source"
+    "psv:energy_source",
+    "psv:fuel_source"
   ]
 }

@@ -3,6 +3,7 @@ package rhx.psv.registry
 import net.minecraft.world.item.CreativeModeTabs
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent
 import rhx.psv.registry.Registry.ENERGY_SOURCE_BLOCK_ITEM
+import rhx.psv.registry.Registry.FUEL_SOURCE_BLOCK_ITEM
 import rhx.psv.registry.Registry.TELEPORT_CORE
 
 object CreativeTabRegister {
@@ -12,6 +13,7 @@ object CreativeTabRegister {
         }
         if (event.tabKey == CreativeModeTabs.REDSTONE_BLOCKS) {
             event.accept(ENERGY_SOURCE_BLOCK_ITEM)
+            event.accept(FUEL_SOURCE_BLOCK_ITEM)
         }
     }
 }
